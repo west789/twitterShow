@@ -1,0 +1,142 @@
+<script id="temp" type="text/html">
+		{{each tweetsList as item}}
+	 <li class="js-stream-item stream-item stream-item js-pinned">
+        <div class="tweet js-stream-tweet js-actionable-tweet js-profile-popup-actionable dismissible-content">
+            <div class="content">
+                <div class="stream-item-header">
+                    <a class="account-group js-account-group js-action-profile js-user-profile-link js-nav"
+                       href="https://twitter.com/django_tutorial"
+                       data-user-id="733580286844248064">
+                        <img class="avatar js-action-profile-avatar"
+                             src="/static/images/headImg/{{ item.profileImage }}"
+                             alt="">
+                        <span class="FullNameGroup">
+                        <strong class="fullname show-popup-with-id u-textTruncate ">{{ item.accountName }}</strong>
+                        <span class="UserBadges"></span>
+                        <span class="UserNameBreak">&nbsp;</span>
+                    </span>
+                        <span class="username u-dir u-textTruncate" dir="ltr"
+                              data-aria-label-part="">@
+                        <b>{{ item.screenName }}</b>
+                    </span>
+                    </a>
+                    <small class="time">
+                        <a href=""
+                           class="tweet-timestamp js-permalink js-nav js-tooltip"
+                           title="上午8:40 - 2016年5月21日"
+                           data-conversation-id="734046109555777536">
+                        <span class="_timestamp js-short-timestamp "
+                              data-aria-label-part="last" data-time="1463845205"
+                              data-time-ms="1463845205000"
+                              data-long-form="true">{{ item.tweetTime }}</span>
+                        </a>
+                    </small>
+                </div>
+                <div class="js-tweet-text-container">
+                    <p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text"
+                       lang="en" data-aria-label-part="0">{{ item.tweetsText }}
+                                                                                <a href="{{ item.tweetsUrl }}" rel="nofollow noopener">推文地址</a></p>
+                </div>
+                {{ if item.imageUrl != "" }}
+                    <div class="AdaptiveMediaOuterContainer">
+                        <div class="AdaptiveMedia is-square ">
+                            <div class="AdaptiveMedia-container">
+
+                                {{ if item.videoUrl != "" }}
+                                    <div class="AdaptiveMedia-video">
+                                        <div class="AdaptiveMedia-videoContainer">
+                                            <div class="PlayableMedia PlayableMedia--gif watched playable-media-loaded">
+                                                <div class="PlayableMedia-container">
+                                                    <div class="PlayableMedia-player"
+                                                         style="padding-bottom: 55.14223194748359%;">
+                                                        <div class="PlayableMedia-reactWrapper">
+                                                            <div style="">
+                                                                <div style="position: relative; width: 100%; height: 100%; background-color: transparent;">
+                                                                    <video controls
+                                                                           preload="none"
+                                                                           playsinline=""
+                                                                           poster="/static/images/tweetImg/{{ item.imageUrl }}"
+                                                                           src="/static/videos/{{ item.videoUrl }}"
+                                                                           type="video/mp4"
+                                                                           style="width: 100%; height: 100%; position: absolute; background-color: black; transform: rotate(0deg) scale(1);"></video>
+                                                                </div>
+                                                                <div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {{ else }}
+                                    <div class="AdaptiveMedia-singlePhoto"
+                                         style="padding-top: calc(0.5625 * 100% - 0.5px);">
+                                        <div class="AdaptiveMedia-photoContainer js-adaptive-photo ">
+                                            <img data-aria-label-part=""
+                                                 src="/static/images/tweetImg/{{ item.imageUrl }}"
+                                                 alt=""
+                                                 style="width: 100%; top: -0px;">
+                                        </div>
+                                    </div>
+                                {{/if }}
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+                <div class="stream-item-footer">
+                    <div class="ProfileTweet-actionList js-actions" role="group"
+                         aria-label="发推行为">
+                        <div class="ProfileTweet-action ProfileTweet-action--reply">
+                            <button class="ProfileTweet-actionButton js-actionButton js-actionReply"
+                                    data-modal="ProfileTweet-reply" type="button"
+                                    aria-describedby="profile-tweet-action-reply-count-aria-734046109555777536">
+                                <div class="IconContainer js-tooltip" title="回复">
+                                    <span class="Icon Icon--medium Icon--reply"></span>
+                                    <span class="u-hiddenVisually">回复</span>
+                                </div>
+                                <span class="ProfileTweet-actionCount ">
+                                <span class="ProfileTweet-actionCountForPresentation"
+                                      aria-hidden="true">2</span>
+                            </span>
+                            </button>
+                        </div>
+                        <div class="ProfileTweet-action ProfileTweet-action--retweet js-toggleState js-toggleRt">
+                            <button class="ProfileTweet-actionButton  js-actionButton js-actionRetweet"
+                                    data-modal="ProfileTweet-retweet" type="button"
+                                    aria-describedby="profile-tweet-action-retweet-count-aria-734046109555777536">
+                                <div class="IconContainer js-tooltip" title="转推">
+                                    <span class="Icon Icon--medium Icon--retweet"></span>
+                                    <span class="u-hiddenVisually">转推</span>
+                                </div>
+                                <span class="ProfileTweet-actionCount">
+                                <span class="ProfileTweet-actionCountForPresentation"
+                                      aria-hidden="true">{{ item.retweetCount }}</span>
+                            </span>
+                            </button>
+                        </div>
+                        <div class="ProfileTweet-action ProfileTweet-action--favorite js-toggleState">
+                            <button class="ProfileTweet-actionButton js-actionButton js-actionFavorite"
+                                    type="button"
+                                    aria-describedby="profile-tweet-action-favorite-count-aria-734046109555777536">
+                                <div class="IconContainer js-tooltip" title="喜欢">
+                            <span role="presentation"
+                                  class="Icon Icon--heart Icon--medium"></span>
+                                    <div class="HeartAnimation"></div>
+                                    <span class="u-hiddenVisually">喜欢</span>
+                                </div>
+                                <span class="ProfileTweet-actionCount">
+                                <span class="ProfileTweet-actionCountForPresentation"
+                                      aria-hidden="true">{{ item.tweetFavCount }}</span>
+                            </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    </script>

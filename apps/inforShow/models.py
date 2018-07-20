@@ -25,7 +25,7 @@ class account(models.Model):
 
 class tweets(models.Model):
     tweetsId = models.AutoField(primary_key=True)
-    accountId = models.IntegerField()
+    accountId = models.ForeignKey("account", on_delete=models.CASCADE, db_column="accountId")
     tweetsText = models.TextField()
     tweetsUrl = models.CharField(max_length=200, null=True, blank=True)
     twitterId = models.CharField(max_length=200)

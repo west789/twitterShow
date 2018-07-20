@@ -1,0 +1,208 @@
+{% extends "head.html" %}
+{% block main %}
+    <div id="page-outer">
+        <div class="ProfileCanopy ProfileCanopy--withNav ProfileCanopy--large js-variableHeightTopBar">
+            <div class="ProfileCanopy-inner">
+                <div class="ProfileCanopy-header u-bgUserColor" style="margin-top: 0px;">
+                    <div class="ProfileCanopy-headerBg">
+                        <img alt="" src="/static/images/bannerImg/{{ accountInfo.bannerUrl }}"
+                             style="transform: translate3d(0px, 10px, 0px);">
+                    </div>
+                    <div class="AppContainer">
+
+                        <div class="ProfileCanopy-avatar">
+                            <div class="ProfileAvatar">
+                                <a class="ProfileAvatar-container u-block js-tooltip profile-picture" target="_blank">
+                                    <img class="ProfileAvatar-image "
+                                         src="/static/images/headImg/{{ accountInfo.profileImage }}"
+                                         alt="{{ accountInfo.accountName }}">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ProfileCanopy-navBar u-boxShadow">
+
+                    <div class="AppContainer">
+                        <div class="Grid Grid--withGutter">
+                            <div class="Grid-cell u-size1of3 u-lg-size1of4">
+                                <div class="ProfileCanopy-card" role="presentation" aria-hidden="true">
+                                    <div class="ProfileCardMini">
+                                        <a class="ProfileCardMini-avatar profile-picture js-tooltip"
+                                           href=""
+                                           title="{{ accountInfo.screenName }}"
+                                                {#                                           data-resolved-url-large="https://pbs.twimg.com/profile_images/733583826299936768/uCvqbqjQ.jpg"#}
+                                                {#                                           data-url="https://pbs.twimg.com/profile_images/733583826299936768/uCvqbqjQ.jpg"#}
+                                           target="_blank" rel="noopener" tabindex="-1">
+                                            <img class="ProfileCardMini-avatarImage" alt="{{ accountInfo.screenName }}"
+                                                 src="">
+                                        </a>
+                                        <div class="ProfileCardMini-details">
+                                            <div class="ProfileNameTruncated account-group">
+                                                <div class="u-textTruncate u-inlineBlock">
+                                                    {#                                                    <a class="fullname ProfileNameTruncated-link u-textInheritColor js-nav"#}
+                                                    {#                                                       href="https://twitter.com/django_tutorial"#}
+                                                    {#                                                       data-aria-label-part=""#}
+                                                    {#                                                       tabindex="-1">#}
+                                                    {#                                                        {{ accountInfo.screenName }}</a>#}
+                                                </div>
+                                                <span class="UserBadges"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="Grid-cell u-size2of3 u-lg-size3of4">
+                                <div class="ProfileCanopy-nav">
+
+                                    <div class="ProfileNav" role="navigation" data-user-id="733580286844248064">
+                                        <ul class="ProfileNav-list">
+                                            <li class="ProfileNav-item ProfileNav-item--tweets is-active">
+                                                <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav"
+                                                   title="3,273 推文" data-nav="tweets"
+                                                   tabindex="0">
+                                                    <span class="ProfileNav-label" aria-hidden="true">推文</span>
+                                                    <span class="ProfileNav-value"
+                                                          data-count="{{ accountInfo.statusesCount }}"
+                                                          data-is-compact="false">{{ accountInfo.statusesCount }}</span>
+                                                </a>
+                                            </li>
+                                            <li class="ProfileNav-item ProfileNav-item--following">
+                                                <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor"
+                                                   data-nav="following"
+                                                   href="javascript:void(0)"
+                                                   data-original-title="1,516 正在关注">
+                                                    <span class="ProfileNav-label" aria-hidden="true">正在关注</span>
+                                                    <span class="u-hiddenVisually">正在关注</span>
+                                                    <span class="ProfileNav-value"
+                                                          data-count="{{ accountInfo.friendsCount }}"
+                                                          data-is-compact="false">{{ accountInfo.friendsCount }}</span>
+                                                </a>
+                                            </li>
+                                            <li class="ProfileNav-item ProfileNav-item--followers">
+                                                <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor"
+                                                   title="2,824 关注者"
+                                                   data-nav="followers"
+                                                   href="javascript:void(0)">
+                                                    <span class="ProfileNav-label" aria-hidden="true">关注者</span>
+                                                    <span class="u-hiddenVisually">关注者</span>
+                                                    <span class="ProfileNav-value"
+                                                          data-count="{{ accountInfo.followersCount }}"
+                                                          data-is-compact="false">{{ accountInfo.followersCount }}</span>
+                                                </a>
+                                            </li>
+                                            <li class="ProfileNav-item ProfileNav-item--favorites"
+                                                data-more-item=".ProfileNav-dropdownItem--favorites">
+                                                <a class="ProfileNav-stat ProfileNav-stat--link u-borderUserColor u-textCenter js-tooltip js-nav u-textUserColor"
+                                                   data-nav="favorites"
+                                                   href="javascript:void(0)"
+                                                   data-original-title="1,482 喜欢">
+                                                    <span class="ProfileNav-label" aria-hidden="true">喜欢</span>
+                                                    <span class="u-hiddenVisually">喜欢</span>
+                                                    <span class="ProfileNav-value"
+                                                          data-count="{{ accountInfo.favoritesCount }}"
+                                                          data-is-compact="false">{{ accountInfo.favoritesCount }}</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="AppContainer">
+            <div class="AppContent-main content-main u-cf" role="main" aria-labelledby="content-main-heading">
+                <div class="Grid Grid--withGutter">
+                    <div class="Grid-cell u-size1of3 u-lg-size1of4">
+                        <div class="Grid Grid--withGutter">
+
+                            <div class="Grid-cell">
+                                <div class="ProfileSidebar ProfileSidebar--withLeftAlignment">
+                                    <div class="ProfileHeaderCard">
+                                        <h1 class="ProfileHeaderCard-name">
+                                            <a href=""
+                                               class="ProfileHeaderCard-nameLink u-textInheritColor js-nav">{{ accountInfo.accountName }}</a>
+                                        </h1>
+
+                                        <h2 class="ProfileHeaderCard-screenname u-inlineBlock u-dir" dir="ltr">
+                                            <a class="ProfileHeaderCard-screennameLink u-linkComplex js-nav" href="">
+                                                        <span class="username u-dir" dir="ltr">@
+                                                            <b class="u-linkComplex-target">{{ accountInfo.screenName }}</b>
+                                                        </span>
+                                            </a>
+                                        </h2>
+                                        <p class="ProfileHeaderCard-bio u-dir" dir="ltr">
+                                            {#                                            <a href="" data-query-source="hashtag_click"#}
+                                            {#                                               class="twitter-hashtag pretty-link js-nav" dir="ltr">#}
+                                            {#                                                <s>#</s>#}
+                                            {#                                                <b>Django</b>#}
+                                            {#                                            </a> is a high-level#}
+                                            {#                                            <a href="https://twitter.com/hashtag/Python?src=hash"#}
+                                            {#                                               data-query-source="hashtag_click"#}
+                                            {#                                               class="twitter-hashtag pretty-link js-nav"#}
+                                            {#                                               dir="ltr">#}
+                                            {#                                                <s>#</s>#}
+                                            {#                                                <b>Python</b>#}
+                                            {#                                            </a>#}
+                                            {{ accountInfo.description }}
+                                        </p>
+
+                                        <div class="ProfileHeaderCard-location u-hidden">
+                                            <span class="Icon Icon--geo Icon--medium" aria-hidden="true"
+                                                  role="presentation"></span>
+                                            <span class="ProfileHeaderCard-locationText u-dir" dir="ltr"></span>
+                                        </div>
+                                        {% if accountInfo.location != "" %}
+                                        <div class="ProfileHeaderCard-location ">
+                                            <span class="Icon Icon--geo Icon--medium" aria-hidden="true"
+                                                  role="presentation"></span>
+                                            <span class="ProfileHeaderCard-locationText u-dir" dir="ltr">{{ accountInfo.location }}</span>
+                                        </div>
+                                        {% endif %}
+                                    {% if accountInfo.url != "" %}
+                                        <div class="ProfileHeaderCard-url ">
+                                            <span class="Icon Icon--url Icon--medium" aria-hidden="true"
+                                                  role="presentation"></span>
+                                            <span class="ProfileHeaderCard-urlText u-dir">
+                                                        <a class="u-textUserColor" target="_blank"
+                                                           rel="me nofollow noopener" href="{{ accountInfo.url }}"
+                                                           title="{{ accountInfo.url }}">
+                                                            {{ accountInfo.url }}
+                                                        </a>
+                                            </span>
+                                        </div>
+                                    {% endif %}
+                                        <div class="ProfileHeaderCard-joinDate">
+                                            <span class="Icon Icon--calendar Icon--medium" aria-hidden="true"
+                                                  role="presentation"></span>
+                                            <span class="ProfileHeaderCard-joinDateText js-tooltip u-dir" dir="ltr"
+                                                  title="">加入于 {{ accountInfo.accountTime }}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--mainmain.html-->
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{#</div>#}
+{#</body>#}
+{##}
+{#</html>#}

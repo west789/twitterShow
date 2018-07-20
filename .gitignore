@@ -1,0 +1,7 @@
+.idea/
+venv/
+static/images/bannerImg/
+static/images/headImg/
+static/images/tweetImg/
+static/videos/
+apps/inforShow/migrations/__pycache__/

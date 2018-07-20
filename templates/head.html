@@ -1,0 +1,47 @@
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/static/css/core.css">
+    <link rel="stylesheet" href="/static/css/more1.css">
+    <link rel="stylesheet" href="/static/css/more2.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    {% block css %}{% endblock %}
+    <title>{{ accountInfo.screenName }} (@{{ accountInfo.screenName }}) | Twitter</title>
+</head>
+<body class="no-nav-banners three-col logged-in user-style-django_tutorial ms-windows asian zh-cn enhanced-mini-profile ProfilePage ProfilePage--withWarning supports-drag-and-drop no-nav-banners swift-loading no-nav-banners swift-loading no-nav-banners swift-loading no-nav-banners">
+<div id="doc" class="route-profile">
+    <div class="global-nav" data-section-term="top_nav">
+        <div id="logo"></div>
+        <div class="global-nav-inner">
+            <div class="container">
+                <div role="navigation" style="display: inline-block;">
+                    <ul class="nav js-global-actions" id="global-actions">
+                        <li id="global-nav-home" class="home" data-global-action="home">
+                            <a class="js-nav js-tooltip js-dynamic-tooltip" data-placement="bottom"
+                               href="{% url 'show:userlist' %}" data-component-context="home_nav"
+                               data-nav="home" data-original-title="">
+                                <span class="Icon Icon--home Icon--large"></span>
+                                <span class="Icon Icon--homeFilled Icon--large u-textUserColor"></span>
+                                <span class="text" aria-hidden="true">用户列表</span>
+                            </a>
+                        </li>
+                        <li class="moments js-moments-tab" data-global-action="moments">
+                            <a role="button" href="{% url "show:detailaccount" 0 %}"
+                               class="js-nav js-tooltip js-dynamic-tooltip" data-component-context="moments_nav"
+                               data-nav="moments" data-placement="bottom" data-original-title="">
+                                <span class="Icon Icon--lightning Icon--large"></span>
+                                <span class="Icon Icon--lightningFilled Icon--large u-textUserColor"></span>
+                                <span class="text" aria-hidden="true">查看所有</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/accountlist.js"></script>
+    {% block main %}{% endblock %}
+</div>
+</body>
+{% block js %}{% endblock %}
+</html>

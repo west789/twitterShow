@@ -1,0 +1,28 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 2,
+  "data": [
+    {
+      "accountId": 1,
+      "accountName": "Elon Musk",
+      "screenName": "elonmusk",
+      "statusesCount": 5090,
+      "friendsCount": 55,
+      "favoritesCount": 1256,
+      "followersCount": 22323941,
+      "accountTime": "2009-06-02"
+    },
+    {
+      "accountId": 2,
+      "accountName": "Andy",
+      "screenName": "DrAndyPardoe",
+      "statusesCount": 122120,
+      "friendsCount": 4023,
+      "favoritesCount": 2269,
+      "followersCount": 8844,
+      "accountTime": "2014-07-06"
+    }
+  ]
+}
+
